@@ -1,0 +1,10 @@
+[package]
+name = "wasmer-leak"
+version = "0.1.0"
+authors = ["Aleksey Kladov <aleksey.kladov@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+fastrand = "1"
+# wasmer = { default-features = false, features = ["singlepass", "universal", "wat"], version = "2" }
+wasmer = { default-features = false, features = ["singlepass", "universal", "wat"], git = "https://github.com/wasmerio/wasmer" }
