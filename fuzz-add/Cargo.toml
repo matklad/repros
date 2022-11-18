@@ -1,0 +1,7 @@
+[package]
+name = "fuzz-add"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+bolero = "0.8.0"
