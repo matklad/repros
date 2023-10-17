@@ -1,0 +1,13 @@
+[package]
+name = "ping-pong"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+crossbeam-channel = "0.5.8"
+
+[profile.release]
+debug = 2
+
+[dev-dependencies]
+xshell = "0.2.5"
