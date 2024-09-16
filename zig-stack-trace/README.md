@@ -34,8 +34,8 @@ thread 32907 panic: integer overflow
 Unable to dump stack trace: debug info stripped
 
 $ ./zig/zig build -Dstrip=objcopy && eza -l ./zig-out/bin/hoyten && ./zig-out/bin/hoyten
-.
-rwxr-xr-x 225k matklad 11 Jan 11:24 ./zig-out/bin/hoyten
+
+.rwxr-xr-x 225k matklad 11 Jan 11:24 ./zig-out/bin/hoyten
 
 thread 33065 panic: integer overflow
 Unwind information for `exe:0x10318a0` was not available, trace may be incomplete
@@ -45,6 +45,19 @@ Unwind information for `exe:0x10318a0` was not available, trace may be incomplet
 ???:?:?: 0x100bbb8 in ??? (exe)
 ???:?:?: 0x100bb93 in ??? (exe)
 ???:?:?: 0x100ba41 in ??? (exe)
+
+$ ./zig/zig build -Dstrip=llvm_objcopy && eza -l ./zig-out/bin/hoyten && ./zig-out/bin/hoyten
+
+.rwxr-xr-x 216k matklad 16 Sep 19:26 ./zig-out/bin/hoyten
+
+thread 9239 panic: integer overflow
+Unwind information for `exe:0x102ed56` was not available, trace may be incomplete
+
+???:?:?: 0x100a6e7 in ??? (exe)
+???:?:?: 0x100a028 in ??? (exe)
+???:?:?: 0x100a018 in ??? (exe)
+???:?:?: 0x1009ff9 in ??? (exe)
+???:?:?: 0x1009ea1 in ??? (exe)
 ```
 
 Rust:

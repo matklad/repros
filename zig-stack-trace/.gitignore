@@ -1,4 +1,4 @@
 /main
 /zig
 /zig-out
-/zig-cache
+/.zig-cache
