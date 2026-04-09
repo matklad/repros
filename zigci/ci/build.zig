@@ -2,7 +2,7 @@ const std = @import("std");
 
 pub fn build(b: *std.Build) void {
     const debug = b.dependency("zigci", .{ .release = false });
-    const release = b.dependency("zigci", .{ .release = false });
+    const release = b.dependency("zigci", .{ .release = true });
 
     const ci = b.step("ci", "Run CI");
 
