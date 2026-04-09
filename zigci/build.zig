@@ -11,7 +11,4 @@ pub fn build(b: *std.Build) void {
     });
     const t_run = b.addRunArtifact(t);
     b.step("test", "Run tests").dependOn(&t_run.step);
-    const lp = b.addSystemCommand(&.{"true"}).captureStdOut();
-    lp.generated.file.step.dependOn(&t_run.step);
-    b.addNamedLazyPath("evidence", lp);
 }

@@ -6,8 +6,6 @@ pub fn build(b: *std.Build) void {
 
     const ci = b.step("ci", "Run CI");
 
-    const test_results = b.addWriteFiles();
-    _ = test_results.addCopyFile(debug.namedLazyPath("evidence"), "debug");
-    _ = test_results.addCopyFile(release.namedLazyPath("evidence"), "release");
-    ci.dependOn(&test_results.step);
+    ci.dependOn(&debug.builder.top_level_steps.get("test").?.step);
+    ci.dependOn(&release.builder.top_level_steps.get("test").?.step);
 }
